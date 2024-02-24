@@ -90,3 +90,24 @@ def random_number_generator(max_random_num):
     """
     random_num = random.randint(0, max_random_num-1)
     return random_num
+
+def main():
+    """
+    Setup for program order which asks the user if they want to 
+    change the password using the same parameters or create a completely new set of parameters
+    """
+    while True:
+        length = password_length()
+        list_password_elements = user_password_pref()
+        while True:
+            password = password_generator(list_password_elements, length)
+            print(f"\nThis is your password: {password}\n")
+            user_choice = input("Would you like to generate a new password using the same parameters?\nPlease answer with 'Y' OR 'N'\n\n")
+            if user_choice.capitalize() != "Y":
+                break
+        user_choice = input(f"\nAre you happy with your password:\n{password}?\n\nPlease answer with 'Y' OR 'N'\n\n")
+        if user_choice.capitalize() == "Y":
+            break
+    print(f"\nYour final password is: {password}\n")
+
+main()
