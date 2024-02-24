@@ -42,3 +42,29 @@ def validate_binary_question(user_answer):
     else:
         print(f"Your input {user_answer} is invalid!\nPlease enter 'Y' OR 'N'\n")
         return False
+
+def user_password_requirements(type):
+    """
+    Checks if user wants to enable certain requirements
+    such as capital letters, numbers and symbols
+    """
+    while True:
+        user_choice = input(f"Do you want to use {type} in your password?\nPlease answer with 'Y' OR 'N'\n\n")
+        if validate_binary_question(user_choice):
+            break
+    return user_choice.capitalize()
+
+def user_password_pref():
+    """
+    Asks user if they want symbols, capital letters and numbers in their password
+    returns 
+    """
+    password = []
+    password.append(BASE_LETTERS)
+    if user_password_requirements("capitalized letters") == "Y":
+        password.append(CAPITAL_LETTERS)
+    if user_password_requirements("symbols") == "Y":
+        password.append(SYMBOLS)
+    if user_password_requirements("numbers") == "Y":
+        password.append(NUMBERS)
+    return password
