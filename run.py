@@ -102,12 +102,18 @@ def main():
         while True:
             password = password_generator(list_password_elements, length)
             print(f"\nThis is your password: {password}\n")
-            user_choice = input("Would you like to generate a new password using the same parameters?\nPlease answer with 'Y' OR 'N'\n\n")
+            while True:
+                user_choice = input("Would you like to generate a new password using the same parameters?\nPlease answer with 'Y' OR 'N'\n\n")
+                if validate_binary_question(user_choice):
+                    break  
             if user_choice.capitalize() != "Y":
-                break
-        user_choice = input(f"\nAre you happy with your password:\n{password}?\n\nPlease answer with 'Y' OR 'N'\n\n")
+                break  
+        while True:
+            user_choice = input(f"\nAre you happy with your password:\n{password}?\n\nPlease answer with 'Y' OR 'N'\n\n")
+            if validate_binary_question(user_choice):
+                break  
         if user_choice.capitalize() == "Y":
-            break
+            break  
     print(f"\nYour final password is: {password}\n")
 
 main()
