@@ -5,6 +5,7 @@ CAPITAL_LETTERS = ['B', 'N', 'H', 'P', 'I', 'X', 'C', 'D', 'K', 'T', 'U', 'V', '
 NUMBERS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 SYMBOLS = ['[', ')', '~', '{', '`', '^', '<', '&', ',', ';', '-', ']', '?', '!', '@', "'", '"', '\\', '_', '|', '(', '$', '*', ':', '%', '+', '}', '/', '=', '.', '>', '#']
 
+
 def password_length():
     """
     Asks user for input of integer between 8 and 40.
@@ -56,8 +57,7 @@ def user_password_requirements(type):
 
 def user_password_pref():
     """
-    Asks user if they want symbols, capital letters and numbers in their password
-    returns 
+    Asks user if they want symbols, capital letters and numbers in their password returns 
     """
     password = []
     password.append(BASE_LETTERS)
@@ -116,4 +116,5 @@ def main():
             break  
     print(f"\nYour final password is: {password}\n")
 
+print("-------------------------------------------\nWelcome to your personal Password Generator.\n-------------------------------------------\n")
 main()
