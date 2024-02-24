@@ -1,6 +1,7 @@
 # Custom Password Generator
 
 This Python script provides a tool for creating secure and customizable passwords. It offers users the ability to specify the length of the password and whether to include capital letters, numbers, and symbols, ensuring that the generated passwords meet various security requirements.
+It makes it simple to create a password and helps users maintain unique passwords for each platform with ease.
 
 ## Features
 
@@ -28,6 +29,17 @@ The script will guide you through several prompts:
 3. **Password Regeneration:** After generating a password, you have the option to regenerate it using the same parameters or modify your preferences.
 
 ## Testing
+
+### PEP8 Report
+
+My recent review of the Password Generator codebase for PEP8 compliance was positive, demonstrating commitment to maintaining high standards for readability and maintainability.
+
+**Summary of Findings:**
+
+- **Overall Compliance**: The code has successfully passed the PEP8 linter test, affirming our adherence to Python's style guide recommendations. This ensures that our code is not only functional but also clean and consistent, making it easier for developers to read, understand, and contribute to.
+
+- **Minor Issues**: The test identified minor issues related to indentation. Indentation is crucial in Python as it dictates the grouping of statements. While these issues do not affect the functionality of our code, they are important for maintaining the structural consistency that PEP8 aims to achieve.
+
 
 ### Manual Tests
 
@@ -190,7 +202,7 @@ def main():
     print(f"\nYour final password is: {password}\n")
 ```
 
-### Additional possible Features:
+### Additional Features that will be added:
 
 - **Main Loop Optimization**: The main loop can be streamlined for efficiency, with a focus on reducing the verbosity of the while loops. The approach to gathering user input can be made more modular, enhancing the code's readability and maintainability.
 
