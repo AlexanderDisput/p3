@@ -61,11 +61,11 @@ def user_password_pref():
     """
     password = []
     password.append(BASE_LETTERS)
-    if user_password_requirements("capitalized letters") == "Y":
+    if user_password_requirements("CAPITAL LETTERS") == "Y":
         password.append(CAPITAL_LETTERS)
-    if user_password_requirements("symbols") == "Y":
+    if user_password_requirements("SYMBOLS") == "Y":
         password.append(SYMBOLS)
-    if user_password_requirements("numbers") == "Y":
+    if user_password_requirements("NUMBERS") == "Y":
         password.append(NUMBERS)
     return password
 
