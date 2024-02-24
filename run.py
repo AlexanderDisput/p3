@@ -31,3 +31,14 @@ def validate_password_length(user_password_length):
         print("\nInvalid input! Integer must be between 8 and 40\n")
         return False
     return True
+
+def validate_binary_question(user_answer):
+    """
+    Checks if the users answer to Yes/No question is valid given that it must be Y or N
+    """
+    if user_answer.capitalize() == "Y" or user_answer.capitalize() == "N":
+        print("\nInput valid\n")
+        return True
+    else:
+        print(f"Your input {user_answer} is invalid!\nPlease enter 'Y' OR 'N'\n")
+        return False
