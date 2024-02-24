@@ -68,3 +68,25 @@ def user_password_pref():
     if user_password_requirements("numbers") == "Y":
         password.append(NUMBERS)
     return password
+
+def password_generator(password_elements, password_length_as_int):
+    """
+    Creates a random password with random number generator
+    Each for loop creates a new random number. 
+    parent_choice is a random choice of LETTERS, NUMBERS or SYMBOLS
+    sublist is a random choice within those lists
+    """
+    password = ""
+    for i in range(password_length_as_int):
+        parent_list = random_number_generator(len(password_elements))
+        sublist = random_number_generator(len(password_elements[parent_list]))
+        password += password_elements[parent_list][sublist]
+    return password
+
+def random_number_generator(max_random_num):
+    """
+    Creates a random number within the max_random_num, 
+    which will be the length of the list we provide as argument
+    """
+    random_num = random.randint(0, max_random_num-1)
+    return random_num
