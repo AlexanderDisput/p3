@@ -6,9 +6,19 @@ It makes it simple to create a password and helps users maintain unique password
 ## Features
 
 - **Customizable Password Length:** Users can specify the desired length of the password, allowing for a range between 8 and 40 characters.
+  ![alt text](images/feature_pw_length.png)
 - **Inclusion of Various Character Sets:** The script supports including capital letters, numbers, and symbols in the password for enhanced security.
+  ![alt text](images/feature_capital_letters.png)
+
+  ![alt text](images/feature_symbols.png)
+
+  ![alt text](images/feature_numbers.png)
+
+
 - **User-friendly Interaction:** Through a series of prompts, users can easily customize their password requirements.
+ ![alt text](images/feature_ux.png)
 - **Input validation:** Inputs given by users are validated to ensure full functionality.
+ ![alt text](images/feature_validation.png)
 
 ## Requirements
 
@@ -28,17 +38,83 @@ The script will guide you through several prompts:
 2. **Character Inclusions:** For each of the following - capital letters, symbols, and numbers - the script will ask if you wish to include them in your password. Respond with 'Y' for yes or 'N' for no.
 3. **Password Regeneration:** After generating a password, you have the option to regenerate it using the same parameters or modify your preferences.
 
+## Deployment & Local Development
+
+### Deployment
+
+The site is deployed using Heroku
+
+# Game Deployment on Heroku
+
+## Overview
+This guide will walk you through the process of deploying our game to Heroku, a cloud platform that allows you to host and manage web applications.
+
+## Prerequisites
+Before you begin, make sure you have the following:
+- A Heroku account. If you don't have one, you can sign up for free at [Heroku's website](https://www.heroku.com/).
+- Git installed on your local machine. You can download Git from [here](https://git-scm.com/downloads).
+- Basic knowledge of using the command line.
+
+## Steps to Deploy
+Follow these steps to deploy the game on Heroku:
+
+1. **Clone the Repository:**
+   ```
+   git clone <repository_url>
+   ```
+
+2. **Navigate to the Project Directory:**
+   ```
+   cd <project_directory>
+   ```
+
+3. **Create a Heroku App:**
+   ```
+   heroku create <app_name>
+   ```
+
+4. **Deploy the Code to Heroku:**
+   ```
+   git push heroku master
+   ```
+
+5. **Open the App:**
+   ```
+   heroku open
+   ```
+
+### Local Development
+
+#### How to Fork
+
+To fork the repository:
+
+1. Log in (or sign up) to Github.
+2. Go to the repository for this project, [Random Password Generator](https://github.com/AlexanderDisput/p3)
+3. Click the Fork button in the top right corner.
+
+#### How to Clone
+
+To clone the repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [Random Password Generator](https://github.com/AlexanderDisput/p3)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+
 ## Testing
 
 ### PEP8 Report
 
 My recent review of the Password Generator codebase for PEP8 compliance was positive, demonstrating commitment to maintaining high standards for readability and maintainability.
 
+![alt text](images/pep8_test.png)
+
 **Summary of Findings:**
 
 - **Overall Compliance**: The code has successfully passed the PEP8 linter test, affirming our adherence to Python's style guide recommendations. This ensures that our code is not only functional but also clean and consistent, making it easier for developers to read, understand, and contribute to.
-
-- **Minor Issues**: The test identified minor issues related to indentation. Indentation is crucial in Python as it dictates the grouping of statements. While these issues do not affect the functionality of our code, they are important for maintaining the structural consistency that PEP8 aims to achieve.
 
 
 ### Manual Tests
@@ -55,6 +131,22 @@ Below are the manual tests conducted to ensure the password generator script ope
 | Handling of None Input | Rejects none input and prompts again | Attempted to press enter without typing anything | Prompted again for valid input | Pass |
 
 These tests ensure that the script not only adheres to the user's customization preferences but also robustly handles unexpected or invalid input, maintaining usability and functionality.
+
+### Additional Tests
+
+##### Checked for correct validation. Please keep in mind that the validation is modular, meaning that failures in tests will apply to all other validation inputs i.e. if a number is accepted when a letter should be accepted, it will fail in every instance.
+
+Tests include:
+**Positive/negative integers**
+**Empty space**
+**Letters when numbers are required**
+**Numbers when letters are required**
+![alt text](images/input_testing_cap.png)
+![alt text](images/input_testing_sym.png)
+![alt text](images/input_testing_numb.png)
+![alt text](images/input_testing_final_pw_ints.png)
+![alt text](images/input_testing_final_pw_letters.png)
+
 
 ### Bugs Encountered and Resolution
 
@@ -211,3 +303,9 @@ def main():
 - **Encryption Algorithm**: To ensure the security of stored passwords, an encryption algorithm can been implemented. This algorithm encrypts passwords before they are pushed to the Google Sheets file. The addition of this feature enhances the application's security, protecting sensitive information from potential vulnerabilities.
 
 - **Functionality Division**: The application could offer users the choice between creating a new password or retrieving data from the file. For data retrieval, the application decrypts the information, ensuring that users can access their stored passwords.
+
+
+### Credits:
+
+Exclusively used the online resources of Code Institute
+All written code was written by me
